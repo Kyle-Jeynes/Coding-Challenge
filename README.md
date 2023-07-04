@@ -34,3 +34,19 @@ Keep your program flexible, so that new pack sizes may be added, or existing pac
 A basic structure is included in this repository and PHPUnit tests have been included to help you check your solution before submitting it. You should run the tests with `./vendor/bin/phpunit`. Some of these tests are quite difficult and we do not necessarily expect that all of them will pass, however, you should aim to make as many of the tests as possible run successfully. 
 
 Please send us your code (either on GitHub/GitLab etc., or as a zip).
+
+### Installation
+
+For your convenience, we created a Dockerised environment to ensure that your solution is isolated and that the assessment does not require any prerequisite time for installations and downloads.
+
+You can run the following commands to spin up the container:
+
+```bash
+git clone https://github.com/Kyle-Jeynes/Coding-Challenge.git
+cd Coding-Challenge
+docker-compose up -d --build
+```
+
+The Dockerfile automatically installs the PHPUnit dependencies, for your ease of use, you can run `iex RunTests.ps1` to execute your PHPUnit tests or, via the container manually, `docker-compose exec -it -u root challenge './vendor/bin/phpunit'`.
+
+If you do not have Docker, or do not want to install it, then simply manually acquire the PHPUnit dependencies with [composer](https://getcomposer.org/). This project was built for PHP 8.1 and subsequently will be available by executing `composer require phpunit/phpunit "^10.2"`. You will then be able to run the Unit Tests via `./vendor/bin/phpunit`.
