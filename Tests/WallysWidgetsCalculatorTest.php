@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Tests;
 
 require __DIR__ . '/../WallysWidgetsCalculator.php';
@@ -12,19 +11,18 @@ class WallysWidgetsCalculatorTest extends TestCase
 {
     private WallysWidgetsCalculator $calculator;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->calculator = new WallysWidgetsCalculator();
     }
 
     /** @dataProvider packsDataProvider */
-    public function testPacksAsExpected(int $widgetsRequired, array $packsExpected, array $packsAvailable = [250, 500, 5000, 2000, 1000])
+    public function testPacksAsExpected(int $widgetsRequired, array $packsExpected, array $packsAvailable = [250, 500, 5000, 2000, 1000]): void
     {
-        $result = $this->calculator->getPacks($widgetsRequired, $packsAvailable);
-        $this->assertEquals($packsExpected, $result);
+        $this->assertEquals($packsExpected, $this->calculator->getPacks($widgetsRequired, $packsAvailable));
     }
 
-    public function packsDataProvider()
+    public function packsDataProvider(): array
     {
         return [
             '1 returns 250' => [
