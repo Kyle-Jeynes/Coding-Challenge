@@ -50,7 +50,7 @@ class WallysWidgetsCalculatorTest extends TestCase
                 44844, [5000 => 9]
             ],
             '1975 returns 2000' => [
-                1985, [2000 => 1]
+                1975, [2000 => 1]
             ],
             '1750 returns 1000, 500 and 250' => [
                 1750, [1000 => 1, 500 => 1, 250 => 1]
